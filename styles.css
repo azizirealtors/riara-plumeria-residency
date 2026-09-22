@@ -1,0 +1,204 @@
+/* ==========================================================================
+   DESIGN TOKENS & BRAND STYLES (Riara Plumeria)
+   ========================================================================== */
+:root {
+  --color-navy: #1E2733;
+  --color-gold: #B08D57;
+  --color-cream: #F6F3EC;
+  --color-charcoal: #2A2A2A;
+  --color-white: #FFFFFF;
+  --color-success: #2E7D32;
+  --color-error: #B3261E;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', Helvetica, Arial, sans-serif;
+
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 64px 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 96px 0;
+  }
+}
+
+.bg-navy {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.bg-cream {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+.master-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(40px, 5vw, 64px);
+  color: var(--color-gold);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: clamp(24px, 4vw, 32px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+
+.eyebrow, .fact-strip {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.gold-rule {
+  border: 0;
+  height: 1px;
+  background-color: var(--color-gold);
+  margin: 24px 0;
+}
+
+/* Outline Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.btn-navy {
+  border: 1px solid var(--color-gold);
+  color: var(--color-white);
+}
+
+.btn-navy:hover {
+  background-color: var(--color-gold);
+  color: var(--color-navy);
+}
+
+.btn-cream {
+  border: 1px solid var(--color-navy);
+  color: var(--color-navy);
+}
+
+.btn-cream:hover {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  height: 48px;
+  padding: 10px 14px;
+  border: 1px solid #CCC;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  background-color: #FFF;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+/* Pricing Table */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 24px;
+}
+
+.pricing-table th, .pricing-table td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.pricing-table th {
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  background-color: rgba(0,0,0,0.03);
+}
+
+/* Layout Utilities */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.media-placeholder {
+  background-color: #E2E8F0;
+  border: 1px dashed #A0AEC0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+  color: #4A5568;
+}

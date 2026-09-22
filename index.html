@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Riara Plumeria Apartments For Sale in Kilimani, Nairobi | Azizi Realtors</title>
+  <meta name="description" content="Riara Plumeria in Kilimani, Nairobi. From KSh 10.7M, ready December 2026. A final collection worth waiting for. Reserve your address today.">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    /* Hero background image integration */
+    #hero {
+      background: linear-gradient(rgba(30, 39, 51, 0.85), rgba(30, 39, 51, 0.85)), 
+                  url('images/hero-bg.jpg') center/cover no-repeat,
+                  url('images/hero-bg.jpeg') center/cover no-repeat;
+    }
+    .media-card {
+      background-color: var(--color-cream);
+      border: 1px solid #E0E0E0;
+      overflow: hidden;
+    }
+    .media-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+    .media-card-body {
+      padding: 16px;
+    }
+
+    /* Exclusive Agency Badge & Prominent Branding */
+    .exclusive-agency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 16px;
+      background: #FFFFFF;
+      padding: 12px 22px;
+      border-radius: 8px;
+      border-left: 6px solid var(--color-gold);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+      margin-bottom: 24px;
+    }
+    .exclusive-agency-badge .agency-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #555;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+    /* Scaled to 75px height for maximum agency prominence */
+    .exclusive-agency-badge img.azizi-main-logo {
+      height: 75px;
+      width: auto;
+      object-fit: contain;
+    }
+    .project-logo-wrapper {
+      margin-bottom: 16px;
+    }
+    .project-logo-wrapper img.plumeria-logo {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.3));
+    }
+
+    /* Portrait Video Player Styles */
+    .portrait-video-wrapper {
+      max-width: 340px;
+      margin: 0 auto;
+      background: #000;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      border: 2px solid var(--color-gold);
+    }
+    .portrait-video-wrapper video {
+      width: 100%;
+      aspect-ratio: 9 / 16;
+      object-fit: cover;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="bg-navy">
+    <div class="container grid-2">
+      <div>
+        <!-- Prominent Exclusive Seller Branding Banner -->
+        <div class="exclusive-agency-badge">
+          <div class="agency-label">Exclusive<br>Marketing Agent</div>
+          <div style="height: 48px; width: 1px; background: #DDD; margin: 0 4px;"></div>
+          <img src="images/azizi-logo.jpg" onerror="this.src='images/azizi-logo.jpeg'" alt="Azizi Realtors - Exclusive Marketing Agent" class="azizi-main-logo">
+        </div>
+
+        <!-- Project Logo -->
+        <div class="project-logo-wrapper">
+          <img src="images/logo.jpg" onerror="this.src='images/logo.jpeg'" alt="Riara Plumeria Logo" class="plumeria-logo">
+        </div>
+
+        <p class="eyebrow">Azizi Realtors Presents</p>
+        <h1 class="master-tagline">A Final Collection Worth Waiting For.</h1>
+        <p style="font-size:20px; margin-bottom: 12px;">Limited Phase Release.</p>
+        <p class="fact-strip">Show House Open Today · From KSh 10.7M · Ready December 2026</p>
+        <hr class="gold-rule">
+        <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:20px;">
+          <a href="#choose-your-home" class="btn btn-navy">See Available Units & Prices</a>
+          <a href="#walk-through" class="btn btn-navy">Watch The Show Unit (0:35)</a>
+        </div>
+      </div>
+
+      <!-- Tier 1 Hero Quick Interest -->
+      <div style="background: rgba(30, 39, 51, 0.9); padding: 24px; border: 1px solid var(--color-gold);">
+        <h3 style="margin-bottom: 16px; font-size: 18px; text-transform: uppercase;">Quick Interest</h3>
+        <form id="hero-lead-form">
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" id="hero-name" class="form-control" placeholder="Your full name" required>
+          </div>
+          <div class="form-group">
+            <label>WhatsApp Number</label>
+            <input type="tel" id="hero-phone" class="form-control" placeholder="+254..." required>
+          </div>
+          <div class="form-group">
+            <label>Unit Type Interest</label>
+            <select id="hero-unit" class="form-control" required>
+              <option value="">Select Option</option>
+              <option value="2-bedroom">2-bedroom</option>
+              <option value="3-bedroom">3-bedroom</option>
+              <option value="4-5 bedroom penthouse">4-5 bedroom penthouse</option>
+            </select>
+          </div>
+          <button type="submit" id="hero-submit-btn" class="btn btn-navy" style="width:100%;">Reserve Your Address Today →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PLUMERIA -->
+  <section id="why-plumeria" class="bg-cream">
+    <div class="container grid-3">
+      <div>
+        <h3 style="color:var(--color-gold); font-size:20px; margin-bottom:8px;">Room To Live In.</h3>
+        <p>105 to 260 square metres across the range, from two-bedroom homes to five-bedroom penthouses.</p>
+      </div>
+      <div>
+        <h3 style="color:var(--color-gold); font-size:20px; margin-bottom:8px;">Across The Street From The Junction.</h3>
+        <p>Walk across the street to The Junction Mall. Everyday life, five minutes away, not a drive.</p>
+      </div>
+      <div>
+        <h3 style="color:var(--color-gold); font-size:20px; margin-bottom:8px;">Move In December 2026.</h3>
+        <p>Azizi’s own current completion date, not a distant promise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOOD -->
+  <section id="neighborhood">
+    <div class="container grid-2">
+      <div>
+        <h2 class="section-heading">Life Around Plumeria</h2>
+        <p>Schools, restaurants, hospitals and The Junction Mall are already part of this neighbourhood, not future plans.</p>
+      </div>
+      <div class="media-card">
+        <img src="images/dining-area.jpg" onerror="this.src='images/dining-area.jpeg'" alt="Dining Area" style="height:300px;">
+        <div class="media-card-body">
+          <p style="font-size:14px; color:#555;">Spacious dining area ideal for hosting and family living.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WALK THROUGH PLUMERIA -->
+  <section id="walk-through" class="bg-cream">
+    <div class="container">
+      <h2 class="section-heading" style="text-align:center;">Walk Through Plumeria</h2>
+      <p style="margin-bottom: 32px; text-align:center;">Real video and photos of the development as it stands today. Not renders.</p>
+      
+      <!-- Video + Wording 2-Column Layout -->
+      <div class="grid-2" style="align-items: center; gap: 40px; margin-bottom: 48px;">
+        <!-- Left Column: Video -->
+        <div>
+          <div class="portrait-video-wrapper">
+            <video controls controlsList="nodownload" playsinline>
+              <source src="images/walkthrough.mp4" type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+          </div>
+          <p style="font-size: 12px; color: #666; margin-top: 12px; text-align:center;">*Show unit for illustration, finishes may vary from the unit purchased.</p>
+        </div>
+
+        <!-- Right Column: Wording & Details -->
+        <div style="background: #FFF; padding: 32px; border-radius: 8px; border-left: 4px solid var(--color-gold); box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+          <p class="eyebrow" style="color: var(--color-gold); margin-bottom: 8px;">Exclusive Video Tour</p>
+          <h3 style="color: var(--color-navy); font-size: 24px; margin-bottom: 16px;">Take a Private Walkthrough</h3>
+          <p style="color: #444; line-height: 1.6; margin-bottom: 20px;">
+            Step inside our completed show unit to experience the modern layout, natural light, and premium interior touches that define Riara Plumeria.
+          </p>
+
+          <ul style="list-style: none; padding: 0; margin: 0 0 24px 0; color: #333; line-height: 2;">
+            <li><strong style="color: var(--color-navy);">✓ Premium Finishes:</strong> Imported porcelain tiles & custom cabinetry</li>
+            <li><strong style="color: var(--color-navy);">✓ Open-Plan Living:</strong> Seamless flow between kitchen & dining</li>
+            <li><strong style="color: var(--color-navy);">✓ Expansive Windows:</strong> Maximized natural ventilation & sunlight</li>
+            <li><strong style="color: var(--color-navy);">✓ Private Balcony:</strong> Unobstructed Kilimani skyline views</li>
+          </ul>
+
+          <a href="#book-viewing" class="btn btn-navy" style="display: inline-block;">Schedule An In-Person Tour →</a>
+        </div>
+      </div>
+
+      <!-- Photo Gallery -->
+      <div class="grid-3">
+        <div class="media-card">
+          <img src="images/living-room.jpg" onerror="this.src='images/living-room.jpeg'" alt="Living Room">
+          <div class="media-card-body">
+            <h4 style="font-size:16px;">Living Room</h4>
+          </div>
+        </div>
+        <div class="media-card">
+          <img src="images/bedroom.jpg" onerror="this.src='images/bedroom.jpeg'" alt="Bedroom">
+          <div class="media-card-body">
+            <h4 style="font-size:16px;">Master Bedroom</h4>
+          </div>
+        </div>
+        <div class="media-card">
+          <img src="images/bathroom.jpg" onerror="this.src='images/bathroom.jpeg'" alt="Bathroom">
+          <div class="media-card-body">
+            <h4 style="font-size:16px;">Modern Bathroom</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIFE INSIDE -->
+  <section id="life-inside">
+    <div class="container">
+      <h2 class="section-heading">Life Inside Plumeria</h2>
+      <div class="grid-2" style="margin-top: 24px;">
+        <div class="media-card">
+          <img src="images/pool.jpg" onerror="this.src='images/pool.jpeg'" alt="Heated Pool">
+          <div class="media-card-body">
+            <h3 style="color:var(--color-navy); font-size:18px;">A Pool, Not A Postcard.</h3>
+            <p style="font-size:14px; color:#555;">A heated pool for residents.</p>
+          </div>
+        </div>
+        <div class="media-card">
+          <img src="images/gym.jpg" onerror="this.src='images/gym.jpeg'" alt="Resident Gym">
+          <div class="media-card-body">
+            <h3 style="color:var(--color-navy); font-size:18px;">Fitness, Built In.</h3>
+            <p style="font-size:14px; color:#555;">A resident gym on site.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOOSE YOUR HOME (PRICING TABLE) -->
+  <section id="choose-your-home" class="bg-cream">
+    <div class="container">
+      <h2 class="section-heading">Choose Your Home</h2>
+      <p>Verified pricing, updated 16 September 2026.</p>
+      <div style="overflow-x:auto;">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Unit Type</th>
+              <th>Bedrooms</th>
+              <th>Size</th>
+              <th>From (KSh)</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Type B</td><td>2-bedroom</td><td>105 sqm</td><td>10,700,000</td><td><button class="btn btn-cream" onclick="preselectUnitAndScroll('2-bedroom')">Reserve</button></td></tr>
+            <tr><td>Type D</td><td>2-bedroom*</td><td>110 sqm</td><td>11,400,000</td><td><button class="btn btn-cream" onclick="preselectUnitAndScroll('2-bedroom')">Reserve</button></td></tr>
+            <tr><td>Type E</td><td>2-bedroom*</td><td>130 sqm</td><td>13,700,000</td><td><button class="btn btn-cream" onclick="preselectUnitAndScroll('2-bedroom')">Reserve</button></td></tr>
+            <tr><td>Type C</td><td>3-bedroom</td><td>130 sqm</td><td>13,700,000</td><td><button class="btn btn-cream" onclick="preselectUnitAndScroll('3-bedroom')">Reserve</button></td></tr>
+            <tr><td>Type A</td><td>3-bedroom</td><td>160 sqm</td><td>17,100,000 – 18,900,000</td><td><button class="btn btn-cream" onclick="preselectUnitAndScroll('3-bedroom')">Reserve</button></td></tr>
+            <tr><td>Penthouse</td><td>4-bedroom</td><td>250 sqm</td><td>27,000,000</td><td><button class="btn btn-cream" onclick="preselectUnitAndScroll('4-5 bedroom penthouse')">Reserve</button></td></tr>
+            <tr><td>Penthouse</td><td>5-bedroom</td><td>260 sqm</td><td>29,000,000</td><td><button class="btn btn-cream" onclick="preselectUnitAndScroll('4-5 bedroom penthouse')">Reserve</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAMILY / INVESTMENT -->
+  <section id="family-investment">
+    <div class="container grid-2">
+      <div>
+        <h3 class="section-heading">For Your Family</h3>
+        <p style="margin-bottom: 16px;">A Home For Right Now. The address and a price you can act on today. From KSh 10.7M for a 105 sqm two-bedroom.</p>
+        <a href="#book-viewing" class="btn btn-cream">Reserve Your Address Today</a>
+      </div>
+      <div>
+        <h3 class="section-heading">For Your Portfolio</h3>
+        <p style="margin-bottom: 16px;">Azizi Realtors is the sole marketing agent for this development, confirmed on its own listing, one contact, no competing intermediary confusion.</p>
+        <a href="https://wa.me/254700000000" class="btn btn-cream">Speak With An Advisor</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY BUY NOW -->
+  <section id="why-buy-now" class="bg-navy">
+    <div class="container text-center" style="text-align:center;">
+      <h2 class="section-heading">Why Buy Now</h2>
+      <p style="font-size:20px;">Limited Phase Release. Move in December 2026.</p>
+      <p style="font-size:12px; color: #AAA; margin-top:8px;">*Targeted completion date. Subject to standard construction timelines.</p>
+      <hr class="gold-rule" style="max-width:300px; margin: 24px auto;">
+      <p class="eyebrow" style="margin-bottom:12px;">Financing Partners</p>
+      <p style="color:var(--color-gold);">I&M Bank · KCB · National Bank</p>
+    </div>
+  </section>
+
+  <!-- TIER 2 FULL QUALIFICATION FORM -->
+  <section id="book-viewing">
+    <div class="container" style="max-width: 600px;">
+      <h2 class="section-heading" style="text-align:center;">Book Your Private Viewing</h2>
+      <form id="full-lead-form">
+        <div class="form-group">
+          <label>Full Name</label>
+          <input type="text" id="full-name" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>WhatsApp Number</label>
+          <input type="tel" id="full-phone" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="full-email" class="form-control" required>
+        </div>
+        <div class="form-group">
+          <label>Buying For</label>
+          <select id="full-buying-for" class="form-control" required>
+            <option value="Home (for my family)">Home (for my family)</option>
+            <option value="Investment">Investment</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Unit Type Interest</label>
+          <select id="full-unit" class="form-control" required>
+            <option value="2-bedroom">2-bedroom</option>
+            <option value="3-bedroom">3-bedroom</option>
+            <option value="4-5 bedroom penthouse">4-5 bedroom penthouse</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Budget Range</label>
+          <select id="full-budget" class="form-control" required>
+            <option value="Under 13.7M">Under 13.7M</option>
+            <option value="13.7–18.9M">13.7–18.9M</option>
+            <option value="19M+">19M+</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Financing Status</label>
+          <select id="full-financing" class="form-control" required>
+            <option value="Cash">Cash</option>
+            <option value="Mortgage pre-approved">Mortgage pre-approved</option>
+            <option value="Mortgage not started">Mortgage not started</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Purchase Timeline</label>
+          <select id="full-timeline" class="form-control" required>
+            <option value="Immediately">Immediately</option>
+            <option value="1-3 months">1-3 months</option>
+            <option value="3-6 months">3-6 months</option>
+            <option value="Just exploring">Just exploring</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Preferred Viewing Day</label>
+          <input type="date" id="full-viewing-day" class="form-control" required>
+        </div>
+        <button type="submit" id="full-submit-btn" class="btn btn-cream" style="width:100%; margin-top:16px;">Reserve Your Address Today</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="bg-navy" style="padding: 40px 0; border-top: 1px solid var(--color-gold);">
+    <div class="container text-center" style="text-align:center;">
+      <p class="eyebrow" style="margin-bottom:12px;">Azizi Realtors is the sole marketing agent for Riara Plumeria.</p>
+      <p style="font-size:12px; color:#888;">Completion date is targeted and subject to standard construction timelines. Prices and availability are subject to change without notice.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
