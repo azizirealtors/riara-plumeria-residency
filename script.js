@@ -6,8 +6,7 @@
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzxkHiJI_FSwDalr1-86TmSP2IYHLAg6lKVKQy2NV4AFC3pEozPxqLK4Pkc0ndZcMcG/exec";
 
 // 2. GoHighLevel Integration (Inbound Webhook Workflow Trigger)
-// Paste your GHL Webhook URL inside the quotes below once generated in your GHL Workflow.
-const GHL_WEBHOOK_URL = "YOUR_GHL_WEBHOOK_URL_HERE";
+const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Ma8WXaRAYZxpsCtjYUiA/webhook-trigger/bbde030d-a5c1-4d2a-ad67-51691a33be89";
 
 // =========================================================================
 // Form Event Listeners
@@ -25,10 +24,10 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
 
-      // Standardized JSON Payload mapped for Google Sheets (Cols A-L) & GHL Contact Fields
+      // Standardized Payload mapped for Google Sheets & GHL
       const payload = {
-        name: document.getElementById("hero-name") ? document.getElementById("hero-name").value : "",
-        phone: document.getElementById("hero-phone") ? document.getElementById("hero-phone").value : "",
+        name: document.getElementById("hero-name") ? document.getElementById("hero-name").value.trim() : "",
+        phone: document.getElementById("hero-phone") ? document.getElementById("hero-phone").value.trim() : "",
         email: "", // Empty for Tier 1
         unit: document.getElementById("hero-unit") ? document.getElementById("hero-unit").value : "",
         buyingFor: "",
@@ -55,11 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
 
-      // Standardized JSON Payload mapped for Google Sheets (Cols A-L) & GHL Contact Fields
+      // Standardized Payload mapped for Google Sheets & GHL
       const payload = {
-        name: document.getElementById("full-name") ? document.getElementById("full-name").value : "",
-        phone: document.getElementById("full-phone") ? document.getElementById("full-phone").value : "",
-        email: document.getElementById("full-email") ? document.getElementById("full-email").value : "",
+        name: document.getElementById("full-name") ? document.getElementById("full-name").value.trim() : "",
+        phone: document.getElementById("full-phone") ? document.getElementById("full-phone").value.trim() : "",
+        email: document.getElementById("full-email") ? document.getElementById("full-email").value.trim() : "",
         unit: document.getElementById("full-unit") ? document.getElementById("full-unit").value : "",
         buyingFor: document.getElementById("full-buying-for") ? document.getElementById("full-buying-for").value : "",
         budget: document.getElementById("full-budget") ? document.getElementById("full-budget").value : "",
@@ -85,14 +84,13 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 function submitLeadToDestinations(data, buttonElement, originalButtonText) {
   
-  // Array of asynchronous requests
   const requests = [];
 
   // Request 1: Google Apps Script Web App
   if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "") {
     const googleSheetPromise = fetch(GOOGLE_SCRIPT_URL, {
       method: "POST",
-      mode: "no-cors", // Required for Google Apps Script Web App cross-origin requests
+      mode: "no-cors", // Handles Apps Script cross-origin
       headers: {
         "Content-Type": "application/json"
       },
@@ -102,7 +100,7 @@ function submitLeadToDestinations(data, buttonElement, originalButtonText) {
   }
 
   // Request 2: GoHighLevel Inbound Webhook
-  if (GHL_WEBHOOK_URL && GHL_WEBHOOK_URL !== "" && GHL_WEBHOOK_URL !== "YOUR_GHL_WEBHOOK_URL_HERE") {
+  if (GHL_WEBHOOK_URL && GHL_WEBHOOK_URL !== "") {
     const ghlPromise = fetch(GHL_WEBHOOK_URL, {
       method: "POST",
       headers: {
@@ -116,7 +114,6 @@ function submitLeadToDestinations(data, buttonElement, originalButtonText) {
   // Execute both requests concurrently
   Promise.allSettled(requests)
     .then(() => {
-      // User feedback and form cleanup
       alert("Thank you! Your details have been received. Our sales team at Azizi Realtors will contact you shortly.");
       buttonElement.disabled = false;
       buttonElement.textContent = originalButtonText;
