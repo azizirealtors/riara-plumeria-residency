@@ -6,7 +6,7 @@
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzxkHiJI_FSwDalr1-86TmSP2IYHLAg6lKVKQy2NV4AFC3pEozPxqLK4Pkc0ndZcMcG/exec";
 
 // 2. GoHighLevel Integration (Inbound Webhook Workflow Trigger)
-const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Ma8WXaRAYZxpsCtjYUiA/webhook-trigger/bbde030d-a5c1-4d2a-ad67-51691a33be89";
+const GHL_WEBHOOK_URL = "https://services.leadconnectorhq.com/hooks/Ma8WXaRAYZxpsCtjYUiA/webhook-trigger/12a8b6bc-782...";
 
 // =========================================================================
 // Form Event Listeners
