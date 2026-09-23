@@ -1,5 +1,17 @@
-// Updated Google Apps Script Web App URL for Riara Plumeria Lead Capture
+// =========================================================================
+// Configuration Settings
+// =========================================================================
+
+// 1. Google Sheets Integration (Google Apps Script Web App Endpoint)
 const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzxkHiJI_FSwDalr1-86TmSP2IYHLAg6lKVKQy2NV4AFC3pEozPxqLK4Pkc0ndZcMcG/exec";
+
+// 2. GoHighLevel Integration (Inbound Webhook Workflow Trigger)
+// Paste your GHL Webhook URL inside the quotes below once generated in your GHL Workflow.
+const GHL_WEBHOOK_URL = "YOUR_GHL_WEBHOOK_URL_HERE";
+
+// =========================================================================
+// Form Event Listeners
+// =========================================================================
 
 document.addEventListener("DOMContentLoaded", () => {
   
@@ -13,11 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
 
-      // Payload aligned with Sheet Columns A-L
+      // Standardized JSON Payload mapped for Google Sheets (Cols A-L) & GHL Contact Fields
       const payload = {
         name: document.getElementById("hero-name") ? document.getElementById("hero-name").value : "",
         phone: document.getElementById("hero-phone") ? document.getElementById("hero-phone").value : "",
-        email: "", // Empty for Hero Form
+        email: "", // Empty for Tier 1
         unit: document.getElementById("hero-unit") ? document.getElementById("hero-unit").value : "",
         buyingFor: "",
         budget: "",
@@ -25,10 +37,11 @@ document.addEventListener("DOMContentLoaded", () => {
         timeline: "",
         viewingDay: "",
         leadPriority: "Hot (Hero Quick)",
-        formTier: "Tier 1 - Quick Interest"
+        formTier: "Tier 1 - Quick Interest",
+        source: "Riara Plumeria Landing Page"
       };
 
-      sendToGoogleSheet(payload, submitBtn, "Reserve Your Address Today →");
+      submitLeadToDestinations(payload, submitBtn, "Reserve Your Address Today →");
     });
   }
 
@@ -42,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending...";
 
-      // Payload aligned with Sheet Columns A-L
+      // Standardized JSON Payload mapped for Google Sheets (Cols A-L) & GHL Contact Fields
       const payload = {
         name: document.getElementById("full-name") ? document.getElementById("full-name").value : "",
         phone: document.getElementById("full-phone") ? document.getElementById("full-phone").value : "",
@@ -54,44 +67,77 @@ document.addEventListener("DOMContentLoaded", () => {
         timeline: document.getElementById("full-timeline") ? document.getElementById("full-timeline").value : "",
         viewingDay: document.getElementById("full-viewing-day") ? document.getElementById("full-viewing-day").value : "",
         leadPriority: "High (Full Qualification)",
-        formTier: "Tier 2 - Full Booking"
+        formTier: "Tier 2 - Full Booking",
+        source: "Riara Plumeria Landing Page"
       };
 
-      sendToGoogleSheet(payload, submitBtn, "Reserve Your Address Today");
+      submitLeadToDestinations(payload, submitBtn, "Reserve Your Address Today");
     });
   }
 });
 
-/**
- * Sends form payload to Google Sheet via POST
- */
-function sendToGoogleSheet(data, buttonElement, originalButtonText) {
-  fetch(GOOGLE_SCRIPT_URL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(data)
-  })
-  .then(() => {
-    alert("Thank you! Your details have been received. Our sales team at Azizi Realtors will contact you shortly.");
-    buttonElement.disabled = false;
-    buttonElement.textContent = originalButtonText;
-    
-    const activeForm = buttonElement.closest("form");
-    if (activeForm) activeForm.reset();
-  })
-  .catch((error) => {
-    console.error("Error submitting lead:", error);
-    alert("There was an error saving your request. Please try again.");
-    buttonElement.disabled = false;
-    buttonElement.textContent = originalButtonText;
-  });
-}
+// =========================================================================
+// Dual-Dispatch Logic: Fires Data to Google Sheets and GHL Asynchronously
+// =========================================================================
 
 /**
- * Pre-selects unit type and smooth scrolls to booking form
+ * Handles concurrent API requests to Google Sheets and GoHighLevel.
+ */
+function submitLeadToDestinations(data, buttonElement, originalButtonText) {
+  
+  // Array of asynchronous requests
+  const requests = [];
+
+  // Request 1: Google Apps Script Web App
+  if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "") {
+    const googleSheetPromise = fetch(GOOGLE_SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors", // Required for Google Apps Script Web App cross-origin requests
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+    requests.push(googleSheetPromise);
+  }
+
+  // Request 2: GoHighLevel Inbound Webhook
+  if (GHL_WEBHOOK_URL && GHL_WEBHOOK_URL !== "" && GHL_WEBHOOK_URL !== "YOUR_GHL_WEBHOOK_URL_HERE") {
+    const ghlPromise = fetch(GHL_WEBHOOK_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+    requests.push(ghlPromise);
+  }
+
+  // Execute both requests concurrently
+  Promise.allSettled(requests)
+    .then(() => {
+      // User feedback and form cleanup
+      alert("Thank you! Your details have been received. Our sales team at Azizi Realtors will contact you shortly.");
+      buttonElement.disabled = false;
+      buttonElement.textContent = originalButtonText;
+      
+      const activeForm = buttonElement.closest("form");
+      if (activeForm) activeForm.reset();
+    })
+    .catch((error) => {
+      console.error("Error submitting lead:", error);
+      alert("There was an error saving your request. Please try again.");
+      buttonElement.disabled = false;
+      buttonElement.textContent = originalButtonText;
+    });
+}
+
+// =========================================================================
+// UI Utility Functions
+// =========================================================================
+
+/**
+ * Pre-selects unit type and smooth scrolls to the booking section
  */
 function preselectUnitAndScroll(unitType) {
   const fullUnitSelect = document.getElementById("full-unit");
