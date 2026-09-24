@@ -3,156 +3,341 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Riara Plumeria Residency | Premium Living on Riara Road</title>
-  <link rel="stylesheet" href="styles.css?v=4.0">
+  <title>Riara Plumeria Residency | A Final Collection Worth Waiting For</title>
+  <link rel="stylesheet" href="styles.css?v=5.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <div class="logo">
-        <img src="images/logo.jpeg" alt="Riara Plumeria Logo" style="height: 40px; width: auto; vertical-align: middle;">
-        <span class="brand-title" style="margin-left: 10px;">RIARA PLUMERIA</span>
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span>EXCLUSIVE MARKETING AGENT</span>
+      <div class="brand-logos">
+        <img src="images/azizi-logo.jpeg" alt="Azizi Realtors">
+        <img src="images/logo.jpeg" alt="Riara Plumeria">
       </div>
-      <a href="#inquire" class="btn btn-primary nav-btn">Inquire Now</a>
     </div>
-  </header>
+  </div>
+
+  <!-- Status Strip -->
+  <div class="status-strip">
+    SHOW HOUSE OPEN TODAY · FROM KSH 10.7M · READY DECEMBER 2026
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
-    <div class="container hero-content">
-      <h1 class="master-tagline">Riara Plumeria Residency</h1>
-      <p class="hero-location">Riara Road, next to The Junction Mall</p>
-      <p class="hero-subtext">Luxury 1 & 2 Bedroom Apartments Designed for Modern Urban Living and Exceptional ROI.</p>
-      
-      <!-- Tier 1 Lead Form -->
-      <div class="quick-form-card" id="inquire">
-        <h3>Request Brochure & Pricing</h3>
-        <form id="tier1Form" class="lead-form">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="sub-header-tag">AZIZI REALTORS PRESENTS</span>
+        <h1 class="master-title">A Final Collection Worth Waiting For.</h1>
+        <p class="sub-headline">Limited Phase Release.</p>
+        <div class="hero-actions">
+          <a href="#choose-home" class="btn btn-primary">SEE AVAILABLE UNITS & PRICES</a>
+          <a href="#walkthrough" class="btn btn-secondary">WATCH THE SHOW UNIT (0:35)</a>
+        </div>
+      </div>
+
+      <!-- Quick Interest Lead Form -->
+      <div class="quick-form-card">
+        <h3>QUICK INTEREST</h3>
+        <form id="tier1Form">
           <div class="form-group">
-            <input type="text" id="t1_name" name="name" class="form-control" placeholder="Full Name *" required>
+            <label>Full Name *</label>
+            <input type="text" id="t1_name" name="name" class="form-control" placeholder="Your full name" required>
           </div>
           <div class="form-group">
-            <input type="email" id="t1_email" name="email" class="form-control" placeholder="Email Address *" required>
+            <label>WhatsApp Number *</label>
+            <input type="tel" id="t1_phone" name="phone" class="form-control" placeholder="+254..." required>
           </div>
           <div class="form-group">
-            <input type="tel" id="t1_phone" name="phone" class="form-control" placeholder="Phone Number *" required>
+            <label>Unit Type Interest *</label>
+            <select id="t1_unit" name="unit_type" class="form-control" required>
+              <option value="">(Select Option)</option>
+              <option value="2-bedroom">2-bedroom</option>
+              <option value="3-bedroom">3-bedroom</option>
+              <option value="4-5 bedroom penthouse">4-5 bedroom penthouse</option>
+            </select>
           </div>
-          <button type="submit" id="t1_submit" class="btn btn-submit">Get Instant Access</button>
+          <button type="submit" id="t1_submit" class="btn btn-submit">RESERVE YOUR ADDRESS TODAY →</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- Overview Section -->
-  <section class="overview bg-cream">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-heading">Prime Urban Investment</h2>
-        <p>Located on Riara Road, next to The Junction Mall, offering unmatched convenience, premium lifestyle amenities, and strong rental yields.</p>
+  <!-- Key Value Statements -->
+  <section class="bg-cream">
+    <div class="container grid-3">
+      <div class="value-card">
+        <h2>Room To Live In.</h2>
+        <p>105 to 260 square metres across the range, from two-bedroom homes to five-bedroom penthouses.</p>
       </div>
-      <div class="grid grid-3">
-        <div class="feature-card">
-          <h3>Prime Location</h3>
-          <p>Situated on Riara Road, next to The Junction Mall, with seamless connectivity to Kilimani, Lavington, and Westlands.</p>
+      <div class="value-card">
+        <h2>Across The Street From The Junction.</h2>
+        <p>Walk across the street to The Junction Mall. Everyday life, five minutes away, not a drive.</p>
+      </div>
+      <div class="value-card">
+        <h2>Move In December 2026.</h2>
+        <p>Azizi’s own current completion date, not a distant promise.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Walkthrough & Video Section -->
+  <section id="walkthrough">
+    <div class="container">
+      <h2 class="section-title">WALK THROUGH PLUMERIA</h2>
+      <p class="section-subtitle">Real video and photos of the development as it stands today. Not renders.</p>
+      
+      <div class="video-container">
+        <video controls poster="images/hero-bg.jpeg">
+          <source src="images/walkthrough.mp4" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      </div>
+      <p style="text-align: center; font-size: 0.8rem; color: #777; margin-top: 8px;">*Show unit for illustration, finishes may vary from the unit purchased.</p>
+
+      <div class="walkthrough-grid">
+        <div>
+          <span class="sub-header-tag">EXCLUSIVE VIDEO TOUR</span>
+          <h2>Take a Private Walkthrough</h2>
+          <p>Step inside our completed show unit to experience the modern layout, natural light, and premium interior touches that define Riara Plumeria.</p>
+          <ul class="bullet-list">
+            <li>✓ <strong>Premium Finishes:</strong> Imported porcelain tiles & custom cabinetry</li>
+            <li>✓ <strong>Open-Plan Living:</strong> Seamless flow between kitchen & dining</li>
+            <li>✓ <strong>Expansive Windows:</strong> Maximized natural ventilation & sunlight</li>
+            <li>✓ <strong>Private Balcony:</strong> Unobstructed Kilimani skyline views</li>
+          </ul>
+          <a href="#book-viewing" class="btn btn-primary">SCHEDULE AN IN-PERSON TOUR →</a>
         </div>
-        <div class="feature-card">
-          <h3>High Rental Yield</h3>
-          <p>Exceptional demand for executive units in this hub ensures high occupancy rates and recurring rental returns.</p>
+        <div>
+          <img src="images/dining-area.jpeg" alt="Dining Area" style="width:100%; border-radius:4px;">
+          <p style="font-size:0.85rem; color:#666; margin-top:6px;">Spacious dining area ideal for hosting and family living.</p>
         </div>
-        <div class="feature-card">
-          <h3>World-Class Amenities</h3>
-          <p>Heated swimming pool, fully equipped fitness center, high-speed elevators, power backup, and 24/7 security.</p>
+      </div>
+
+      <!-- Showcase Gallery -->
+      <div class="grid-3" style="margin-top: 40px;">
+        <div class="media-card">
+          <img src="images/living-room.jpeg" alt="Living Room">
+          <div class="media-card-body"><strong>Living Room</strong></div>
+        </div>
+        <div class="media-card">
+          <img src="images/bedroom.jpeg" alt="Master Bedroom">
+          <div class="media-card-body"><strong>Master Bedroom</strong></div>
+        </div>
+        <div class="media-card">
+          <img src="images/bathroom.jpeg" alt="Modern Bathroom">
+          <div class="media-card-body"><strong>Modern Bathroom</strong></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Property Gallery Section -->
-  <section class="gallery-section">
+  <!-- Amenities Section -->
+  <section class="bg-cream">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-heading">Property Showcase</h2>
-        <p>Explore the architectural refinement and modern finishes of Riara Plumeria Residency.</p>
-      </div>
-      <div class="grid grid-3">
-        <div class="partner-card">
-          <img src="images/living-room.jpeg" alt="Living Room" style="width: 100%; height: 220px; object-fit: cover; border-radius: 4px;">
+      <h2 class="section-title">LIFE INSIDE PLUMERIA</h2>
+      <div class="grid-3" style="grid-template-columns: 1fr 1fr; margin-top: 30px;">
+        <div class="media-card">
+          <img src="images/pool.jpeg" alt="Heated Pool">
+          <div class="media-card-body">
+            <h3>A Pool, Not A Postcard.</h3>
+            <p>A heated pool for residents.</p>
+          </div>
         </div>
-        <div class="partner-card">
-          <img src="images/bedroom.jpeg" alt="Bedroom" style="width: 100%; height: 220px; object-fit: cover; border-radius: 4px;">
-        </div>
-        <div class="partner-card">
-          <img src="images/dining-area.jpeg" alt="Dining Area" style="width: 100%; height: 220px; object-fit: cover; border-radius: 4px;">
-        </div>
-        <div class="partner-card">
-          <img src="images/bathroom.jpeg" alt="Bathroom" style="width: 100%; height: 220px; object-fit: cover; border-radius: 4px;">
-        </div>
-        <div class="partner-card">
-          <img src="images/gym.jpeg" alt="Gym" style="width: 100%; height: 220px; object-fit: cover; border-radius: 4px;">
-        </div>
-        <div class="partner-card">
-          <img src="images/pool.jpeg" alt="Pool" style="width: 100%; height: 220px; object-fit: cover; border-radius: 4px;">
+        <div class="media-card">
+          <img src="images/gym.jpeg" alt="Resident Gym">
+          <div class="media-card-body">
+            <h3>Fitness, Built In.</h3>
+            <p>A resident gym on site.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Financing Partners Section -->
-  <section class="financing-partners bg-cream">
+  <!-- Unit Matrix & Pricing Table -->
+  <section id="choose-home">
     <div class="container">
-      <div class="section-header">
-        <h2 class="section-heading">Our Financing Partners</h2>
-        <p>Flexible mortgage and financing solutions tailored through our trusted banking partners.</p>
+      <h2 class="section-title">CHOOSE YOUR HOME</h2>
+      <p class="section-subtitle">Verified pricing, updated 16 September 2026.</p>
+      
+      <div class="table-wrapper">
+        <table class="unit-table">
+          <thead>
+            <tr>
+              <th>UNIT TYPE</th>
+              <th>BEDROOMS</th>
+              <th>SIZE</th>
+              <th>FROM (KSH)</th>
+              <th>ACTION</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Type B</td>
+              <td>2-bedroom</td>
+              <td>105 sqm</td>
+              <td>10,700,000</td>
+              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+            </tr>
+            <tr>
+              <td>Type D</td>
+              <td>2-bedroom*</td>
+              <td>110 sqm</td>
+              <td>11,400,000</td>
+              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+            </tr>
+            <tr>
+              <td>Type E</td>
+              <td>2-bedroom*</td>
+              <td>130 sqm</td>
+              <td>13,700,000</td>
+              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+            </tr>
+            <tr>
+              <td>Type C</td>
+              <td>3-bedroom</td>
+              <td>130 sqm</td>
+              <td>13,700,000</td>
+              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+            </tr>
+            <tr>
+              <td>Type A</td>
+              <td>3-bedroom</td>
+              <td>160 sqm</td>
+              <td>17,100,000 – 18,900,000</td>
+              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+            </tr>
+            <tr>
+              <td>Penthouse</td>
+              <td>4-bedroom</td>
+              <td>250 sqm</td>
+              <td>27,000,000</td>
+              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+            </tr>
+            <tr>
+              <td>Penthouse</td>
+              <td>5-bedroom</td>
+              <td>260 sqm</td>
+              <td>29,000,000</td>
+              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="partners-grid">
-        <div class="partner-card">
-          <img src="images/kcb-logo.png" alt="KCB Bank" class="partner-logo">
-        </div>
-        <div class="partner-card">
-          <img src="images/nbk-logo.jpg" alt="National Bank of Kenya" class="partner-logo">
-        </div>
-        <div class="partner-card">
-          <img src="images/i-and-m-logo.jpg" alt="I&M Bank" class="partner-logo">
+    </div>
+  </section>
+
+  <!-- Audience Propositions -->
+  <section class="bg-cream">
+    <div class="container grid-3" style="grid-template-columns: 1fr 1fr;">
+      <div class="value-card">
+        <h2>FOR YOUR FAMILY</h2>
+        <p>A Home For Right Now. The address and a price you can act on today. From KSh 10.7M for a 105 sqm two-bedroom.</p>
+        <a href="#book-viewing" class="btn btn-primary" style="margin-top:15px;">RESERVE YOUR ADDRESS TODAY</a>
+      </div>
+      <div class="value-card">
+        <h2>FOR YOUR PORTFOLIO</h2>
+        <p>Azizi Realtors is the sole marketing agent for this development, confirmed on its own listing, one contact, no competing intermediary confusion.</p>
+        <a href="#book-viewing" class="btn btn-primary" style="margin-top:15px;">SPEAK WITH AN ADVISOR</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Secondary Banner & Partners -->
+  <section style="text-align: center;">
+    <div class="container">
+      <h2>WHY BUY NOW</h2>
+      <p style="font-style: italic; font-size: 1.2rem;">Limited Phase Release. Move in December 2026.*</p>
+      <p style="font-size: 0.8rem; color: #777;">*Targeted completion date. Subject to standard construction timelines.</p>
+
+      <div style="margin-top: 40px;">
+        <span class="sub-header-tag">FINANCING PARTNERS</span>
+        <div class="partners-list">
+          <span>I&M Bank</span> · <span>KCB</span> · <span>National Bank</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Tier 2 Site Visit Form Section -->
-  <section class="qualification-section bg-navy" id="qualify">
+  <!-- Lead Capture Form #2: Detailed Viewing Form -->
+  <section class="bg-cream" id="book-viewing">
     <div class="container">
-      <div class="form-card-large">
-        <h2 class="section-heading">Book a Private Site Visit or Consultation</h2>
-        <p>Fill out the details below to schedule a walkthrough on Riara Road, next to The Junction Mall.</p>
-        
-        <form id="tier2Form" class="lead-form grid-2-form">
+      <div class="detailed-form-card">
+        <h2 class="section-title">BOOK YOUR PRIVATE VIEWING</h2>
+        <form id="tier2Form" class="grid-2-form">
+          
           <div class="form-group">
-            <label for="t2_name">Full Name *</label>
+            <label>Full Name *</label>
             <input type="text" id="t2_name" name="name" class="form-control" required>
           </div>
+
           <div class="form-group">
-            <label for="t2_email">Email Address *</label>
-            <input type="email" id="t2_email" name="email" class="form-control" required>
-          </div>
-          <div class="form-group">
-            <label for="t2_phone">Phone Number *</label>
+            <label>WhatsApp Number *</label>
             <input type="tel" id="t2_phone" name="phone" class="form-control" required>
           </div>
+
+          <div class="form-group full-width">
+            <label>Email Address *</label>
+            <input type="email" id="t2_email" name="email" class="form-control" required>
+          </div>
+
           <div class="form-group">
-            <label for="t2_unit">Interested Unit Type</label>
-            <select id="t2_unit" name="unit_type" class="form-control">
-              <option value="1 Bedroom">1 Bedroom</option>
-              <option value="2 Bedroom">2 Bedroom</option>
-              <option value="Investment / Multiple">Investment / Multiple Units</option>
+            <label>Buying For *</label>
+            <select id="t2_buying_for" name="buying_for" class="form-control" required>
+              <option value="Home (for my family)">Home (for my family)</option>
+              <option value="Investment">Investment</option>
             </select>
           </div>
+
+          <div class="form-group">
+            <label>Unit Type Interest *</label>
+            <select id="t2_unit" name="unit_type" class="form-control" required>
+              <option value="2-bedroom">2-bedroom</option>
+              <option value="3-bedroom">3-bedroom</option>
+              <option value="4-5 bedroom penthouse">4-5 bedroom penthouse</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Budget Range *</label>
+            <select id="t2_budget" name="budget_range" class="form-control" required>
+              <option value="Under 13.7M">Under 13.7M</option>
+              <option value="13.7–18.9M">13.7–18.9M</option>
+              <option value="19M+">19M+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Financing Status *</label>
+            <select id="t2_financing" name="financing_status" class="form-control" required>
+              <option value="Cash">Cash</option>
+              <option value="Mortgage pre-approved">Mortgage pre-approved</option>
+              <option value="Mortgage not started">Mortgage not started</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Purchase Timeline *</label>
+            <select id="t2_timeline" name="purchase_timeline" class="form-control" required>
+              <option value="Immediately">Immediately</option>
+              <option value="1-3 months">1-3 months</option>
+              <option value="3-6 months">3-6 months</option>
+              <option value="Just exploring">Just exploring</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>Preferred Viewing Day *</label>
+            <input type="date" id="t2_date" name="viewing_date" class="form-control" required>
+          </div>
+
           <div class="form-group full-width">
-            <button type="submit" id="t2_submit" class="btn btn-submit">Schedule Visit</button>
+            <button type="submit" id="t2_submit" class="btn btn-submit">RESERVE YOUR ADDRESS TODAY</button>
           </div>
         </form>
       </div>
@@ -161,16 +346,13 @@
 
   <!-- Footer -->
   <footer>
-    <div class="container footer-content">
-      <div style="margin-bottom: 1rem;">
-        <img src="images/azizi-logo.jpeg" alt="Azizi Realtors" style="max-height: 50px; width: auto; filter: brightness(0) invert(1);">
-      </div>
-      <p>Azizi Realtors is the sole marketing agent for this premium collection.</p>
-      <p class="copyright">&copy; 2026 Azizi Realtors. All rights reserved.</p>
+    <div class="container">
+      <p><strong>AZIZI REALTORS IS THE SOLE MARKETING AGENT FOR RIARA PLUMERIA.</strong></p>
+      <p style="color: #aaa; margin-top: 8px;">Completion date is targeted and subject to standard construction timelines. Prices and availability are subject to change without notice.</p>
     </div>
   </footer>
 
-  <!-- Dual Dispatch Script (GoHighLevel + Google Sheets) -->
+  <!-- Dual Dispatch Script (Google Apps Script + GoHighLevel) -->
   <script>
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxkHiJI_FSwDalr1-86TmSP2IYHLAg6lKVKQy2NV4AFC3pEozPxqLK4Pkc0ndZcMcG/exec';
     const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/Ma8WXaRAYZxpsCtjYUiA/webhook-trigger/12a8b6bc-782';
@@ -200,16 +382,16 @@
 
       const payload = {
         name: document.getElementById('t1_name').value.trim(),
-        email: document.getElementById('t1_email').value.trim(),
         phone: document.getElementById('t1_phone').value.trim(),
-        source: 'Riara Plumeria Landing Page - Tier 1 Quick Form'
+        unit_type: document.getElementById('t1_unit').value,
+        source: 'Riara Plumeria Landing Page - Quick Interest Form'
       };
 
       await sendPayload(payload);
-      alert('Thank you! Your inquiry has been received.');
+      alert('Thank you! Your address reservation inquiry has been received.');
       this.reset();
       submitBtn.disabled = false;
-      submitBtn.innerText = 'Get Instant Access';
+      submitBtn.innerText = 'RESERVE YOUR ADDRESS TODAY →';
     });
 
     document.getElementById('tier2Form').addEventListener('submit', async function(e) {
@@ -220,17 +402,22 @@
 
       const payload = {
         name: document.getElementById('t2_name').value.trim(),
-        email: document.getElementById('t2_email').value.trim(),
         phone: document.getElementById('t2_phone').value.trim(),
+        email: document.getElementById('t2_email').value.trim(),
+        buying_for: document.getElementById('t2_buying_for').value,
         unit_type: document.getElementById('t2_unit').value,
-        source: 'Riara Plumeria Landing Page - Tier 2 Site Visit Form'
+        budget_range: document.getElementById('t2_budget').value,
+        financing_status: document.getElementById('t2_financing').value,
+        purchase_timeline: document.getElementById('t2_timeline').value,
+        viewing_date: document.getElementById('t2_date').value,
+        source: 'Riara Plumeria Landing Page - Detailed Private Viewing Form'
       };
 
       await sendPayload(payload);
-      alert('Thank you! Your site visit request has been recorded.');
+      alert('Thank you! Your private viewing reservation has been booked.');
       this.reset();
       submitBtn.disabled = false;
-      submitBtn.innerText = 'Schedule Visit';
+      submitBtn.innerText = 'RESERVE YOUR ADDRESS TODAY';
     });
   </script>
 </body>
