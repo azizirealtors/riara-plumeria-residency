@@ -1,4 +1,18 @@
-/* Global Reset & Base Styles */
+/* ==========================================================================
+   DESIGN TOKENS & BRAND STYLES (Riara Plumeria)
+   ========================================================================== */
+:root {
+  --color-navy: #1E2733;
+  --color-gold: #B08D57;
+  --color-cream: #F6F3EC;
+  --color-charcoal: #2A2A2A;
+  --color-white: #FFFFFF;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Montserrat', 'Inter', Helvetica, Arial, sans-serif;
+  --max-width: 1200px;
+}
+
+/* Global Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,57 +20,105 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  color: #333333;
+  font-family: var(--font-sans);
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
+  font-size: 16px;
   line-height: 1.6;
-  background-color: #ffffff;
 }
 
 .container {
+  max-width: var(--max-width);
   width: 90%;
-  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 20px;
 }
 
-/* Typography & Buttons */
-h1, h2, h3 {
-  color: #1a1a1a;
-  margin-bottom: 0.75rem;
-  font-weight: 700;
+section {
+  padding: 64px 0;
+}
+
+@media (min-width: 768px) {
+  section {
+    padding: 96px 0;
+  }
 }
 
 p {
   margin-bottom: 1rem;
 }
 
+/* Color Background Utilities */
+.bg-navy {
+  background-color: var(--color-navy);
+  color: var(--color-white);
+}
+
+.bg-cream {
+  background-color: var(--color-cream);
+  color: var(--color-charcoal);
+}
+
+/* Typography & Headings */
+h1, h2, h3 {
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.master-tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(32px, 5vw, 56px);
+  color: #ffffff;
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: clamp(24px, 4vw, 32px);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
+}
+
+/* Buttons */
 .btn {
-  display: inline-block;
-  padding: 0.85rem 1.75rem;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 12px 24px;
+  font-family: var(--font-sans);
+  font-size: 14px;
   font-weight: 600;
-  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   text-decoration: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: all 0.3s ease;
+  border-radius: 4px;
   border: none;
 }
 
 .btn-primary {
-  background-color: #c5a059; /* Gold Accent */
+  background-color: var(--color-gold);
   color: #ffffff;
 }
 
 .btn-primary:hover {
-  background-color: #b08c46;
+  background-color: #9a7a48;
 }
 
 .btn-submit {
   width: 100%;
-  background-color: #1a2b4c; /* Deep Navy */
+  background-color: var(--color-navy);
   color: #ffffff;
   padding: 1rem;
   font-size: 1.05rem;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
 }
 
 .btn-submit:hover {
@@ -88,26 +150,21 @@ p {
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 1px;
-  color: #1a2b4c;
+  color: var(--color-navy);
 }
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(rgba(26, 43, 76, 0.75), rgba(26, 43, 76, 0.75)), url('images/hero.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(30, 39, 51, 0.85), rgba(30, 39, 51, 0.85)), url('images/hero.jpg') center/cover no-repeat;
   color: #ffffff;
   padding: 5rem 0;
   text-align: center;
 }
 
-.hero h1 {
-  color: #ffffff;
-  font-size: 2.75rem;
-}
-
 .hero-location {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #c5a059;
+  color: var(--color-gold);
   margin-bottom: 1rem;
 }
 
@@ -117,7 +174,7 @@ p {
   font-size: 1.1rem;
 }
 
-/* Form Styles */
+/* Forms */
 .quick-form-card {
   background-color: #ffffff;
   color: #333333;
@@ -125,13 +182,14 @@ p {
   margin: 0 auto;
   padding: 2rem;
   border-radius: 8px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   text-align: left;
 }
 
 .quick-form-card h3 {
   text-align: center;
   margin-bottom: 1.25rem;
+  color: var(--color-navy);
 }
 
 .form-group {
@@ -140,66 +198,64 @@ p {
 
 .form-group label {
   display: block;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 600;
   margin-bottom: 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #333333;
 }
 
+.form-control,
 .form-group input,
 .form-group select {
   width: 100%;
-  padding: 0.8rem 1rem;
+  height: 48px;
+  padding: 10px 14px;
   border: 1px solid #cccccc;
   border-radius: 4px;
   font-size: 1rem;
   font-family: inherit;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: #c5a059;
-}
-
-/* Section Common */
-.overview, .financing-partners, .qualification-section {
-  padding: 4.5rem 0;
-}
-
-.overview {
   background-color: #ffffff;
 }
 
+.form-control:focus,
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--color-gold);
+}
+
+/* Sections & Grids */
 .section-header {
   text-align: center;
   max-width: 750px;
   margin: 0 auto 3rem auto;
 }
 
-.section-header h2 {
-  font-size: 2.2rem;
-}
-
-/* Grids */
 .grid {
   display: grid;
   gap: 2rem;
 }
 
 .grid-3 {
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
 .feature-card {
-  background-color: #f9f9f9;
+  background-color: #ffffff;
   padding: 2rem;
   border-radius: 6px;
-  border-left: 4px solid #c5a059;
+  border-left: 4px solid var(--color-gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Financing Partners Styling */
+/* Financing Partners Section */
 .financing-partners {
-  background-color: #f7f9fc;
+  background-color: #ffffff;
+  padding: 4.5rem 0;
 }
 
 .partners-grid {
@@ -207,7 +263,7 @@ p {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 3.5rem;
+  gap: 3rem;
   margin-top: 2rem;
 }
 
@@ -215,15 +271,16 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
+  padding: 1.25rem;
   background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
 }
 
 .partner-logo {
-  max-width: 240px; /* Scaled up bank partner logos */
-  max-height: 100px;
+  max-width: 220px;
+  max-height: 90px;
   width: auto;
   height: auto;
   object-fit: contain;
@@ -235,13 +292,18 @@ p {
 }
 
 /* Qualification Form Section */
+.qualification-section {
+  padding: 4.5rem 0;
+}
+
 .form-card-large {
   background-color: #ffffff;
   padding: 3rem;
   border-radius: 8px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
   max-width: 800px;
   margin: 0 auto;
+  color: #333333;
 }
 
 .grid-2-form {
@@ -257,7 +319,7 @@ p {
 
 /* Footer */
 footer {
-  background-color: #1a2b4c;
+  background-color: var(--color-navy);
   color: #ffffff;
   padding: 2.5rem 0;
   text-align: center;
@@ -275,19 +337,16 @@ footer p {
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .hero h1 {
-    font-size: 2rem;
+  .master-tagline {
+    font-size: 2.2rem;
   }
-  
   .partners-grid {
     gap: 1.5rem;
   }
-
   .partner-logo {
-    max-width: 150px;
-    max-height: 75px;
+    max-width: 140px;
+    max-height: 60px;
   }
-
   .form-card-large {
     padding: 1.75rem;
   }
