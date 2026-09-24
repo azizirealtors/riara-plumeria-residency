@@ -1,21 +1,4 @@
-/* ==========================================================================
-   DESIGN TOKENS & BRAND STYLES (Riara Plumeria)
-   ========================================================================== */
-:root {
-  --color-navy: #1E2733;
-  --color-gold: #B08D57;
-  --color-cream: #F6F3EC;
-  --color-charcoal: #2A2A2A;
-  --color-white: #FFFFFF;
-  --color-success: #2E7D32;
-  --color-error: #B3261E;
-
-  --font-serif: 'Playfair Display', Georgia, serif;
-  --font-sans: 'Inter', Helvetica, Arial, sans-serif;
-
-  --max-width: 1200px;
-}
-
+/* Global Reset & Base Styles */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -23,182 +6,289 @@
 }
 
 body {
-  font-family: var(--font-sans);
-  background-color: var(--color-white);
-  color: var(--color-charcoal);
-  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  color: #333333;
   line-height: 1.6;
+  background-color: #ffffff;
 }
 
 .container {
-  max-width: var(--max-width);
+  width: 90%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
-section {
-  padding: 64px 0;
-}
-
-@media (min-width: 768px) {
-  section {
-    padding: 96px 0;
-  }
-}
-
-.bg-navy {
-  background-color: var(--color-navy);
-  color: var(--color-white);
-}
-
-.bg-cream {
-  background-color: var(--color-cream);
-  color: var(--color-charcoal);
-}
-
+/* Typography & Buttons */
 h1, h2, h3 {
-  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
 }
 
-.master-tagline {
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(40px, 5vw, 64px);
-  color: var(--color-gold);
-  line-height: 1.15;
-  margin-bottom: 12px;
+p {
+  margin-bottom: 1rem;
 }
 
-.section-heading {
-  font-size: clamp(24px, 4vw, 32px);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 24px;
-}
-
-.eyebrow, .fact-strip {
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-}
-
-.gold-rule {
-  border: 0;
-  height: 1px;
-  background-color: var(--color-gold);
-  margin: 24px 0;
-}
-
-/* Outline Buttons */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  padding: 12px 24px;
-  font-family: var(--font-sans);
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  display: inline-block;
+  padding: 0.85rem 1.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  background: transparent;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: none;
 }
 
-.btn-navy {
-  border: 1px solid var(--color-gold);
-  color: var(--color-white);
+.btn-primary {
+  background-color: #c5a059; /* Gold Accent */
+  color: #ffffff;
 }
 
-.btn-navy:hover {
-  background-color: var(--color-gold);
-  color: var(--color-navy);
+.btn-primary:hover {
+  background-color: #b08c46;
 }
 
-.btn-cream {
-  border: 1px solid var(--color-navy);
-  color: var(--color-navy);
+.btn-submit {
+  width: 100%;
+  background-color: #1a2b4c; /* Deep Navy */
+  color: #ffffff;
+  padding: 1rem;
+  font-size: 1.05rem;
 }
 
-.btn-cream:hover {
-  background-color: var(--color-navy);
-  color: var(--color-white);
+.btn-submit:hover {
+  background-color: #121e36;
 }
 
-/* Form Controls */
+.btn-submit:disabled {
+  background-color: #8a94a6;
+  cursor: not-allowed;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #1a2b4c;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(26, 43, 76, 0.75), rgba(26, 43, 76, 0.75)), url('images/hero.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.hero h1 {
+  color: #ffffff;
+  font-size: 2.75rem;
+}
+
+.hero-location {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #c5a059;
+  margin-bottom: 1rem;
+}
+
+.hero-subtext {
+  max-width: 700px;
+  margin: 0 auto 2.5rem auto;
+  font-size: 1.1rem;
+}
+
+/* Form Styles */
+.quick-form-card {
+  background-color: #ffffff;
+  color: #333333;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+
+.quick-form-card h3 {
+  text-align: center;
+  margin-bottom: 1.25rem;
+}
+
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 1.25rem;
 }
 
 .form-group label {
   display: block;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
 }
 
-.form-control {
+.form-group input,
+.form-group select {
   width: 100%;
-  height: 48px;
-  padding: 10px 14px;
-  border: 1px solid #CCC;
-  font-family: var(--font-sans);
-  font-size: 16px;
-  background-color: #FFF;
+  padding: 0.8rem 1rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
 }
 
-.form-control:focus {
+.form-group input:focus,
+.form-group select:focus {
   outline: none;
-  border-color: var(--color-gold);
+  border-color: #c5a059;
 }
 
-/* Pricing Table */
-.pricing-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 24px;
+/* Section Common */
+.overview, .financing-partners, .qualification-section {
+  padding: 4.5rem 0;
 }
 
-.pricing-table th, .pricing-table td {
-  padding: 16px;
-  text-align: left;
-  border-bottom: 1px solid #E0E0E0;
+.overview {
+  background-color: #ffffff;
 }
 
-.pricing-table th {
-  text-transform: uppercase;
-  font-size: 13px;
-  letter-spacing: 0.08em;
-  background-color: rgba(0,0,0,0.03);
+.section-header {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 3rem auto;
 }
 
-/* Layout Utilities */
-.grid-2 {
+.section-header h2 {
+  font-size: 2.2rem;
+}
+
+/* Grids */
+.grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 32px;
+  gap: 2rem;
 }
 
 .grid-3 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-@media (min-width: 768px) {
-  .grid-2 { grid-template-columns: 1fr 1fr; }
-  .grid-3 { grid-template-columns: repeat(3, 1fr); }
+.feature-card {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 6px;
+  border-left: 4px solid #c5a059;
 }
 
-.media-placeholder {
-  background-color: #E2E8F0;
-  border: 1px dashed #A0AEC0;
+/* Financing Partners Styling */
+.financing-partners {
+  background-color: #f7f9fc;
+}
+
+.partners-grid {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 3.5rem;
+  margin-top: 2rem;
+}
+
+.partner-card {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.partner-logo {
+  max-width: 240px; /* Scaled up bank partner logos */
+  max-height: 100px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+  transform: scale(1.05);
+}
+
+/* Qualification Form Section */
+.form-card-large {
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.grid-2-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+/* Footer */
+footer {
+  background-color: #1a2b4c;
+  color: #ffffff;
+  padding: 2.5rem 0;
   text-align: center;
-  padding: 40px 20px;
-  color: #4A5568;
+  font-size: 0.95rem;
+}
+
+footer p {
+  margin-bottom: 0.5rem;
+}
+
+.copyright {
+  color: #a0aec0;
+  font-size: 0.85rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .partners-grid {
+    gap: 1.5rem;
+  }
+
+  .partner-logo {
+    max-width: 150px;
+    max-height: 75px;
+  }
+
+  .form-card-large {
+    padding: 1.75rem;
+  }
 }
