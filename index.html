@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Riara Plumeria Residency | Premium Living on Riara Road</title>
-<link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,400;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Header / Navigation -->
+  <!-- Navigation Bar -->
   <header class="navbar">
     <div class="container nav-container">
       <div class="logo">
@@ -24,22 +24,22 @@
   <!-- Hero Section -->
   <section class="hero">
     <div class="container hero-content">
-      <h1>Riara Plumeria Residency</h1>
+      <h1 class="master-tagline">Riara Plumeria Residency</h1>
       <p class="hero-location">Riara Road, next to The Junction Mall</p>
       <p class="hero-subtext">Luxury 1 & 2 Bedroom Apartments Designed for Modern Urban Living and Exceptional ROI.</p>
       
-      <!-- Tier 1 Quick Form -->
+      <!-- Tier 1 Lead Form -->
       <div class="quick-form-card" id="inquire">
         <h3>Request Brochure & Pricing</h3>
         <form id="tier1Form" class="lead-form">
           <div class="form-group">
-            <input type="text" id="t1_name" name="name" placeholder="Full Name *" required>
+            <input type="text" id="t1_name" name="name" class="form-control" placeholder="Full Name *" required>
           </div>
           <div class="form-group">
-            <input type="email" id="t1_email" name="email" placeholder="Email Address *" required>
+            <input type="email" id="t1_email" name="email" class="form-control" placeholder="Email Address *" required>
           </div>
           <div class="form-group">
-            <input type="tel" id="t1_phone" name="phone" placeholder="Phone Number *" required>
+            <input type="tel" id="t1_phone" name="phone" class="form-control" placeholder="Phone Number *" required>
           </div>
           <button type="submit" id="t1_submit" class="btn btn-submit">Get Instant Access</button>
         </form>
@@ -47,11 +47,11 @@
     </div>
   </section>
 
-  <!-- Overview / Highlights -->
-  <section class="overview">
+  <!-- Overview Section -->
+  <section class="overview bg-cream">
     <div class="container">
       <div class="section-header">
-        <h2>Prime Urban Investment</h2>
+        <h2 class="section-heading">Prime Urban Investment</h2>
         <p>Located on Riara Road, next to The Junction Mall, offering unmatched convenience, premium lifestyle amenities, and strong rental yields.</p>
       </div>
       <div class="grid grid-3">
@@ -75,7 +75,7 @@
   <section class="financing-partners">
     <div class="container">
       <div class="section-header">
-        <h2>Our Financing Partners</h2>
+        <h2 class="section-heading">Our Financing Partners</h2>
         <p>Flexible mortgage and financing solutions tailored through our trusted banking partners.</p>
       </div>
       <div class="partners-grid">
@@ -92,29 +92,29 @@
     </div>
   </section>
 
-  <!-- Tier 2 Full Qualification Form -->
-  <section class="qualification-section" id="qualify">
+  <!-- Tier 2 Site Visit Form Section -->
+  <section class="qualification-section bg-navy" id="qualify">
     <div class="container">
       <div class="form-card-large">
-        <h2>Book a Private Site Visit or Consultation</h2>
-        <p>Fill out the details below to schedule a walkthrough on Riara Road, next to The Junction Mall.</p>
+        <h2 class="section-heading" style="color: #1a1a1a;">Book a Private Site Visit or Consultation</h2>
+        <p style="color: #666666;">Fill out the details below to schedule a walkthrough on Riara Road, next to The Junction Mall.</p>
         
         <form id="tier2Form" class="lead-form grid-2-form">
           <div class="form-group">
             <label for="t2_name">Full Name *</label>
-            <input type="text" id="t2_name" name="name" required>
+            <input type="text" id="t2_name" name="name" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="t2_email">Email Address *</label>
-            <input type="email" id="t2_email" name="email" required>
+            <input type="email" id="t2_email" name="email" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="t2_phone">Phone Number *</label>
-            <input type="tel" id="t2_phone" name="phone" required>
+            <input type="tel" id="t2_phone" name="phone" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="t2_unit">Interested Unit Type</label>
-            <select id="t2_unit" name="unit_type">
+            <select id="t2_unit" name="unit_type" class="form-control">
               <option value="1 Bedroom">1 Bedroom</option>
               <option value="2 Bedroom">2 Bedroom</option>
               <option value="Investment / Multiple">Investment / Multiple Units</option>
@@ -136,7 +136,7 @@
     </div>
   </footer>
 
-  <!-- Submission Logic Script -->
+  <!-- Dual Dispatch Script (GoHighLevel + Google Sheets) -->
   <script>
     const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
     const GHL_WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL';
