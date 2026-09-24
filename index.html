@@ -96,8 +96,8 @@
   <section class="qualification-section bg-navy" id="qualify">
     <div class="container">
       <div class="form-card-large">
-        <h2 class="section-heading" style="color: #1a1a1a;">Book a Private Site Visit or Consultation</h2>
-        <p style="color: #666666;">Fill out the details below to schedule a walkthrough on Riara Road, next to The Junction Mall.</p>
+        <h2 class="section-heading">Book a Private Site Visit or Consultation</h2>
+        <p>Fill out the details below to schedule a walkthrough on Riara Road, next to The Junction Mall.</p>
         
         <form id="tier2Form" class="lead-form grid-2-form">
           <div class="form-group">
@@ -138,8 +138,8 @@
 
   <!-- Dual Dispatch Script (GoHighLevel + Google Sheets) -->
   <script>
-    const GOOGLE_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL';
-    const GHL_WEBHOOK_URL = 'YOUR_GHL_WEBHOOK_URL';
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxkHiJI_FSwDalr1-86TmSP2IYHLAg6lKVKQy2NV4AFC3pEozPxqLK4Pkc0ndZcMcG/exec';
+    const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/Ma8WXaRAYZxpsCtjYUiA/webhook-trigger/12a8b6bc-782';
 
     async function sendPayload(data) {
       const gscriptPromise = fetch(GOOGLE_SCRIPT_URL, {
