@@ -4,70 +4,68 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Riara Plumeria Residency | A Final Collection Worth Waiting For</title>
-  <link rel="stylesheet" href="styles.css?v=5.0">
+  <link rel="stylesheet" href="styles.css?v=7.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Top Announcement Bar -->
-  <div class="top-bar">
-    <div class="container top-bar-content">
-      <span>EXCLUSIVE MARKETING AGENT</span>
-      <div class="brand-logos">
-        <img src="images/azizi-logo.jpeg" alt="Azizi Realtors">
-        <img src="images/logo.jpeg" alt="Riara Plumeria">
-      </div>
-    </div>
-  </div>
-
-  <!-- Status Strip -->
-  <div class="status-strip">
-    SHOW HOUSE OPEN TODAY · FROM KSH 10.7M · READY DECEMBER 2026
-  </div>
-
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-text">
-        <span class="sub-header-tag">AZIZI REALTORS PRESENTS</span>
-        <h1 class="master-title">A Final Collection Worth Waiting For.</h1>
-        <p class="sub-headline">Limited Phase Release.</p>
-        <div class="hero-actions">
-          <a href="#choose-home" class="btn btn-primary">SEE AVAILABLE UNITS & PRICES</a>
-          <a href="#walkthrough" class="btn btn-secondary">WATCH THE SHOW UNIT (0:35)</a>
+  <section class="hero-section">
+    <div class="container">
+      
+      <div class="hero-grid">
+        <!-- Hero Left Column -->
+        <div class="hero-left">
+          <div class="agency-badge-card">
+            <span class="badge-text">EXCLUSIVE MARKETING AGENT</span>
+            <div class="badge-logo">
+              <img src="images/azizi-logo.jpeg" alt="Azizi Realtors">
+            </div>
+          </div>
+
+          <img src="images/logo.jpeg" alt="Riara Plumeria" class="plumeria-logo-sub">
+
+          <span class="sub-header-tag">AZIZI REALTORS PRESENTS</span>
+          <h1 class="master-title">A Final Collection Worth Waiting For.</h1>
+          <p class="sub-headline">Limited Phase Release.</p>
+
+          <p style="font-size:0.85rem; letter-spacing:0.05em; margin-top:20px;">
+            SHOW HOUSE OPEN TODAY · FROM KSH 10.7M · READY DECEMBER 2026
+          </p>
+        </div>
+
+        <!-- Hero Right Column: Quick Interest Form -->
+        <div class="hero-quick-form">
+          <h3>QUICK INTEREST</h3>
+          <form id="tier1Form">
+            <div class="form-group">
+              <label>FULL NAME</label>
+              <input type="text" id="t1_name" name="name" class="form-control" placeholder="Your full name" required>
+            </div>
+            <div class="form-group">
+              <label>WHATSAPP NUMBER</label>
+              <input type="tel" id="t1_phone" name="phone" class="form-control" placeholder="+254..." required>
+            </div>
+            <div class="form-group">
+              <label>UNIT TYPE INTEREST</label>
+              <select id="t1_unit" name="unit_type" class="form-control" required>
+                <option value="">Select Option</option>
+                <option value="2-bedroom">2-bedroom</option>
+                <option value="3-bedroom">3-bedroom</option>
+                <option value="4-5 bedroom penthouse">4-5 bedroom penthouse</option>
+              </select>
+            </div>
+            <button type="submit" id="t1_submit" class="btn-hero-submit">RESERVE YOUR ADDRESS TODAY →</button>
+          </form>
         </div>
       </div>
 
-      <!-- Quick Interest Lead Form -->
-      <div class="quick-form-card">
-        <h3>QUICK INTEREST</h3>
-        <form id="tier1Form">
-          <div class="form-group">
-            <label>Full Name *</label>
-            <input type="text" id="t1_name" name="name" class="form-control" placeholder="Your full name" required>
-          </div>
-          <div class="form-group">
-            <label>WhatsApp Number *</label>
-            <input type="tel" id="t1_phone" name="phone" class="form-control" placeholder="+254..." required>
-          </div>
-          <div class="form-group">
-            <label>Unit Type Interest *</label>
-            <select id="t1_unit" name="unit_type" class="form-control" required>
-              <option value="">(Select Option)</option>
-              <option value="2-bedroom">2-bedroom</option>
-              <option value="3-bedroom">3-bedroom</option>
-              <option value="4-5 bedroom penthouse">4-5 bedroom penthouse</option>
-            </select>
-          </div>
-          <button type="submit" id="t1_submit" class="btn btn-submit">RESERVE YOUR ADDRESS TODAY →</button>
-        </form>
-      </div>
     </div>
   </section>
 
-  <!-- Key Value Statements -->
+  <!-- 3-Column Key Value Statements -->
   <section class="bg-cream">
     <div class="container grid-3">
       <div class="value-card">
@@ -85,40 +83,53 @@
     </div>
   </section>
 
-  <!-- Walkthrough & Video Section -->
-  <section id="walkthrough">
+  <!-- Life Around Plumeria -->
+  <section style="background-color: #ffffff;">
+    <div class="container split-content">
+      <div>
+        <h2 class="section-title" style="text-align: left; margin-bottom: 16px;">LIFE AROUND PLUMERIA</h2>
+        <p style="font-size: 1.05rem; color: #4A5568;">Schools, restaurants, hospitals and The Junction Mall are already part of this neighbourhood, not future plans.</p>
+      </div>
+      <div>
+        <img src="images/dining-area.jpeg" alt="Dining Room Life Around Plumeria" style="width: 100%; border-radius: 2px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Walk Through Plumeria Section -->
+  <section class="bg-cream" id="walkthrough">
     <div class="container">
       <h2 class="section-title">WALK THROUGH PLUMERIA</h2>
       <p class="section-subtitle">Real video and photos of the development as it stands today. Not renders.</p>
       
-      <div class="video-container">
-        <video controls poster="images/hero-bg.jpeg">
-          <source src="images/walkthrough.mp4" type="video/mp4">
-          Your browser does not support video playback.
-        </video>
-      </div>
-      <p style="text-align: center; font-size: 0.8rem; color: #777; margin-top: 8px;">*Show unit for illustration, finishes may vary from the unit purchased.</p>
-
-      <div class="walkthrough-grid">
+      <div class="walkthrough-split">
+        <!-- Video Box -->
         <div>
-          <span class="sub-header-tag">EXCLUSIVE VIDEO TOUR</span>
-          <h2>Take a Private Walkthrough</h2>
-          <p>Step inside our completed show unit to experience the modern layout, natural light, and premium interior touches that define Riara Plumeria.</p>
+          <div class="video-container">
+            <video controls poster="images/hero-bg.jpeg">
+              <source src="images/walkthrough.mp4" type="video/mp4">
+              Your browser does not support video playback.
+            </video>
+          </div>
+          <p style="font-size: 0.75rem; color: #718096; margin-top: 8px; text-align: center;">*Show unit for illustration, finishes may vary from the unit purchased.</p>
+        </div>
+
+        <!-- Exclusive Video Tour Box -->
+        <div class="walkthrough-box">
+          <span class="sub-header-tag" style="color:var(--color-gold);">EXCLUSIVE VIDEO TOUR</span>
+          <h2 style="font-family: var(--font-serif); font-size: 1.75rem; color: #1a1a1a; margin-bottom: 12px; font-weight: 400;">Take a Private Walkthrough</h2>
+          <p style="font-size: 0.95rem; color: #4A5568;">Step inside our completed show unit to experience the modern layout, natural light, and premium interior touches that define Riara Plumeria.</p>
+          
           <ul class="bullet-list">
             <li>✓ <strong>Premium Finishes:</strong> Imported porcelain tiles & custom cabinetry</li>
             <li>✓ <strong>Open-Plan Living:</strong> Seamless flow between kitchen & dining</li>
             <li>✓ <strong>Expansive Windows:</strong> Maximized natural ventilation & sunlight</li>
-            <li>✓ <strong>Private Balcony:</strong> Unobstructed Kilimani skyline views</li>
+            <li>✓ <strong>Private Balcony:</strong> Unobstructed Riara Road views</li>
           </ul>
-          <a href="#book-viewing" class="btn btn-primary">SCHEDULE AN IN-PERSON TOUR →</a>
-        </div>
-        <div>
-          <img src="images/dining-area.jpeg" alt="Dining Area" style="width:100%; border-radius:4px;">
-          <p style="font-size:0.85rem; color:#666; margin-top:6px;">Spacious dining area ideal for hosting and family living.</p>
         </div>
       </div>
 
-      <!-- Showcase Gallery -->
+      <!-- 3-Media Showcase Cards -->
       <div class="grid-3" style="margin-top: 40px;">
         <div class="media-card">
           <img src="images/living-room.jpeg" alt="Living Room">
@@ -136,31 +147,31 @@
     </div>
   </section>
 
-  <!-- Amenities Section -->
-  <section class="bg-cream">
+  <!-- Life Inside Plumeria -->
+  <section style="background-color: #ffffff;">
     <div class="container">
       <h2 class="section-title">LIFE INSIDE PLUMERIA</h2>
       <div class="grid-3" style="grid-template-columns: 1fr 1fr; margin-top: 30px;">
         <div class="media-card">
           <img src="images/pool.jpeg" alt="Heated Pool">
           <div class="media-card-body">
-            <h3>A Pool, Not A Postcard.</h3>
-            <p>A heated pool for residents.</p>
+            <h3 style="font-family: var(--font-serif); color: #1a1a1a; font-size: 1.15rem; font-weight: 400; margin-bottom: 4px;">A Pool, Not A Postcard.</h3>
+            <p style="font-size: 0.9rem; color: #4A5568;">A heated pool for residents.</p>
           </div>
         </div>
         <div class="media-card">
           <img src="images/gym.jpeg" alt="Resident Gym">
           <div class="media-card-body">
-            <h3>Fitness, Built In.</h3>
-            <p>A resident gym on site.</p>
+            <h3 style="font-family: var(--font-serif); color: #1a1a1a; font-size: 1.15rem; font-weight: 400; margin-bottom: 4px;">Fitness, Built In.</h3>
+            <p style="font-size: 0.9rem; color: #4A5568;">A resident gym on site.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Unit Matrix & Pricing Table -->
-  <section id="choose-home">
+  <!-- Choose Your Home Pricing Table -->
+  <section class="bg-cream" id="choose-home">
     <div class="container">
       <h2 class="section-title">CHOOSE YOUR HOME</h2>
       <p class="section-subtitle">Verified pricing, updated 16 September 2026.</p>
@@ -182,49 +193,49 @@
               <td>2-bedroom</td>
               <td>105 sqm</td>
               <td>10,700,000</td>
-              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+              <td><a href="#book-viewing" class="btn btn-primary">RESERVE</a></td>
             </tr>
             <tr>
               <td>Type D</td>
               <td>2-bedroom*</td>
               <td>110 sqm</td>
               <td>11,400,000</td>
-              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+              <td><a href="#book-viewing" class="btn btn-primary">RESERVE</a></td>
             </tr>
             <tr>
               <td>Type E</td>
               <td>2-bedroom*</td>
               <td>130 sqm</td>
               <td>13,700,000</td>
-              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+              <td><a href="#book-viewing" class="btn btn-primary">RESERVE</a></td>
             </tr>
             <tr>
               <td>Type C</td>
               <td>3-bedroom</td>
               <td>130 sqm</td>
               <td>13,700,000</td>
-              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+              <td><a href="#book-viewing" class="btn btn-primary">RESERVE</a></td>
             </tr>
             <tr>
               <td>Type A</td>
               <td>3-bedroom</td>
               <td>160 sqm</td>
               <td>17,100,000 – 18,900,000</td>
-              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+              <td><a href="#book-viewing" class="btn btn-primary">RESERVE</a></td>
             </tr>
             <tr>
               <td>Penthouse</td>
               <td>4-bedroom</td>
               <td>250 sqm</td>
               <td>27,000,000</td>
-              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+              <td><a href="#book-viewing" class="btn btn-primary">RESERVE</a></td>
             </tr>
             <tr>
               <td>Penthouse</td>
               <td>5-bedroom</td>
               <td>260 sqm</td>
               <td>29,000,000</td>
-              <td><a href="#book-viewing" class="btn btn-primary" style="padding: 6px 14px; min-height: 32px;">RESERVE</a></td>
+              <td><a href="#book-viewing" class="btn btn-primary">RESERVE</a></td>
             </tr>
           </tbody>
         </table>
@@ -233,61 +244,65 @@
   </section>
 
   <!-- Audience Propositions -->
-  <section class="bg-cream">
+  <section style="background-color: #ffffff;">
     <div class="container grid-3" style="grid-template-columns: 1fr 1fr;">
       <div class="value-card">
-        <h2>FOR YOUR FAMILY</h2>
-        <p>A Home For Right Now. The address and a price you can act on today. From KSh 10.7M for a 105 sqm two-bedroom.</p>
-        <a href="#book-viewing" class="btn btn-primary" style="margin-top:15px;">RESERVE YOUR ADDRESS TODAY</a>
+        <h2 class="section-title" style="text-align:left; font-size: 1.5rem;">FOR YOUR FAMILY</h2>
+        <p style="margin-bottom: 20px;">A Home For Right Now. The address and a price you can act on today. From KSh 10.7M for a 105 sqm two-bedroom.</p>
+        <a href="#book-viewing" class="btn btn-primary">RESERVE YOUR ADDRESS TODAY</a>
       </div>
       <div class="value-card">
-        <h2>FOR YOUR PORTFOLIO</h2>
-        <p>Azizi Realtors is the sole marketing agent for this development, confirmed on its own listing, one contact, no competing intermediary confusion.</p>
-        <a href="#book-viewing" class="btn btn-primary" style="margin-top:15px;">SPEAK WITH AN ADVISOR</a>
+        <h2 class="section-title" style="text-align:left; font-size: 1.5rem;">FOR YOUR PORTFOLIO</h2>
+        <p style="margin-bottom: 20px;">Azizi Realtors is the sole marketing agent for this development, confirmed on its own listing, one contact, no competing intermediary confusion.</p>
+        <a href="#book-viewing" class="btn btn-primary">SPEAK WITH AN ADVISOR</a>
       </div>
     </div>
   </section>
 
-  <!-- Secondary Banner & Partners -->
-  <section style="text-align: center;">
-    <div class="container">
-      <h2>WHY BUY NOW</h2>
-      <p style="font-style: italic; font-size: 1.2rem;">Limited Phase Release. Move in December 2026.*</p>
-      <p style="font-size: 0.8rem; color: #777;">*Targeted completion date. Subject to standard construction timelines.</p>
+  <!-- Banner & Bank Logos -->
+  <section class="bg-dark">
+    <div class="container" style="text-align: center;">
+      <h2 style="font-family: var(--font-sans); font-size: 1.8rem; letter-spacing: 0.05em; font-weight: 500; margin-bottom: 12px; text-transform: uppercase;">WHY BUY NOW</h2>
+      <p style="font-size: 1.1rem; color: #E2E8F0; margin-bottom: 6px;">Limited Phase Release. Move in December 2026.</p>
+      <p style="font-size: 0.75rem; color: #A0AEC0; margin-bottom: 30px;">*Targeted completion date. Subject to standard construction timelines.</p>
 
-      <div style="margin-top: 40px;">
-        <span class="sub-header-tag">FINANCING PARTNERS</span>
-        <div class="partners-list">
-          <span>I&M Bank</span> · <span>KCB</span> · <span>National Bank</span>
-        </div>
+      <hr style="border: 0; border-top: 1px solid rgba(197, 160, 89, 0.4); max-width: 400px; margin: 0 auto 25px auto;">
+
+      <span style="font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold); display: block; margin-bottom: 15px;">FINANCING PARTNERS</span>
+      
+      <!-- Bank Logos Display -->
+      <div class="partner-logos-grid">
+        <img src="images/i-and-m-logo.jpg" alt="I&M Bank" class="partner-logo-img">
+        <img src="images/kcb-logo.png" alt="KCB Bank" class="partner-logo-img">
+        <img src="images/nbk-logo.jpg" alt="National Bank (NBK)" class="partner-logo-img">
       </div>
     </div>
   </section>
 
-  <!-- Lead Capture Form #2: Detailed Viewing Form -->
-  <section class="bg-cream" id="book-viewing">
+  <!-- Detailed Private Viewing Form -->
+  <section style="background-color: #ffffff;" id="book-viewing">
     <div class="container">
-      <div class="detailed-form-card">
-        <h2 class="section-title">BOOK YOUR PRIVATE VIEWING</h2>
-        <form id="tier2Form" class="grid-2-form">
-          
+      <div class="detailed-form-container">
+        <h2 class="section-title" style="margin-bottom: 30px;">BOOK YOUR PRIVATE VIEWING</h2>
+        
+        <form id="tier2Form">
           <div class="form-group">
-            <label>Full Name *</label>
+            <label style="color:#2D3748;">FULL NAME</label>
             <input type="text" id="t2_name" name="name" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label>WhatsApp Number *</label>
+            <label style="color:#2D3748;">WHATSAPP NUMBER</label>
             <input type="tel" id="t2_phone" name="phone" class="form-control" required>
           </div>
 
-          <div class="form-group full-width">
-            <label>Email Address *</label>
+          <div class="form-group">
+            <label style="color:#2D3748;">EMAIL ADDRESS</label>
             <input type="email" id="t2_email" name="email" class="form-control" required>
           </div>
 
           <div class="form-group">
-            <label>Buying For *</label>
+            <label style="color:#2D3748;">BUYING FOR</label>
             <select id="t2_buying_for" name="buying_for" class="form-control" required>
               <option value="Home (for my family)">Home (for my family)</option>
               <option value="Investment">Investment</option>
@@ -295,7 +310,7 @@
           </div>
 
           <div class="form-group">
-            <label>Unit Type Interest *</label>
+            <label style="color:#2D3748;">UNIT TYPE INTEREST</label>
             <select id="t2_unit" name="unit_type" class="form-control" required>
               <option value="2-bedroom">2-bedroom</option>
               <option value="3-bedroom">3-bedroom</option>
@@ -304,7 +319,7 @@
           </div>
 
           <div class="form-group">
-            <label>Budget Range *</label>
+            <label style="color:#2D3748;">BUDGET RANGE</label>
             <select id="t2_budget" name="budget_range" class="form-control" required>
               <option value="Under 13.7M">Under 13.7M</option>
               <option value="13.7–18.9M">13.7–18.9M</option>
@@ -313,7 +328,7 @@
           </div>
 
           <div class="form-group">
-            <label>Financing Status *</label>
+            <label style="color:#2D3748;">FINANCING STATUS</label>
             <select id="t2_financing" name="financing_status" class="form-control" required>
               <option value="Cash">Cash</option>
               <option value="Mortgage pre-approved">Mortgage pre-approved</option>
@@ -322,7 +337,7 @@
           </div>
 
           <div class="form-group">
-            <label>Purchase Timeline *</label>
+            <label style="color:#2D3748;">PURCHASE TIMELINE</label>
             <select id="t2_timeline" name="purchase_timeline" class="form-control" required>
               <option value="Immediately">Immediately</option>
               <option value="1-3 months">1-3 months</option>
@@ -332,12 +347,12 @@
           </div>
 
           <div class="form-group">
-            <label>Preferred Viewing Day *</label>
+            <label style="color:#2D3748;">PREFERRED VIEWING DAY</label>
             <input type="date" id="t2_date" name="viewing_date" class="form-control" required>
           </div>
 
-          <div class="form-group full-width">
-            <button type="submit" id="t2_submit" class="btn btn-submit">RESERVE YOUR ADDRESS TODAY</button>
+          <div style="margin-top: 25px;">
+            <button type="submit" id="t2_submit" class="btn btn-primary" style="width:100%; height:48px;">RESERVE YOUR ADDRESS TODAY</button>
           </div>
         </form>
       </div>
@@ -347,8 +362,8 @@
   <!-- Footer -->
   <footer>
     <div class="container">
-      <p><strong>AZIZI REALTORS IS THE SOLE MARKETING AGENT FOR RIARA PLUMERIA.</strong></p>
-      <p style="color: #aaa; margin-top: 8px;">Completion date is targeted and subject to standard construction timelines. Prices and availability are subject to change without notice.</p>
+      <p style="font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">AZIZI IS THE SOLE MARKETING AGENT FOR THIS PREMIUM COLLECTION.</p>
+      <p style="color: #A0AEC0; font-size: 0.78rem; margin-top: 6px;">Completion date is targeted and subject to standard construction timelines. Prices and availability are subject to change without notice.</p>
     </div>
   </footer>
 
