@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Riara Plumeria Residency | A Final Collection Worth Waiting For</title>
-  <link rel="stylesheet" href="styles.css?v=9.0">
+  <link rel="stylesheet" href="styles.css?v=10.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -373,26 +373,37 @@
     </div>
   </footer>
 
-  <!-- Dual Dispatch Script (Google Apps Script + GoHighLevel) -->
+  <!-- Fixed Dual Dispatch Script -->
   <script>
     const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzxkHiJI_FSwDalr1-86TmSP2IYHLAg6lKVKQy2NV4AFC3pEozPxqLK4Pkc0ndZcMcG/exec';
-    const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/Ma8WXaRAYZxpsCtjYUiA/webhook-trigger/12a8b6bc-782';
+    
+    // REPLACE THIS WITH YOUR FULL 36-CHARACTER GHL INBOUND WEBHOOK URL FROM YOUR WORKFLOW
+    const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/Ma8WXaRAYZxpsCtjYUiA/webhook-trigger/12a8b6bc-7825-4c0a-8695-8e3a41e0c000';
 
     async function sendPayload(data) {
+      // 1. Google Apps Script Dispatch (no-cors mode required by GAS)
       const gscriptPromise = fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
-      });
+      }).catch(err => console.error('Google Sheets Endpoint Error:', err));
 
+      // 2. GoHighLevel Inbound Webhook Dispatch
       const ghlPromise = fetch(GHL_WEBHOOK_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
-      });
+      }).then(res => {
+        if (!res.ok) {
+          console.error(`GHL Webhook Error: Status ${res.status} ${res.statusText}`);
+        } else {
+          console.log('GHL Webhook delivered successfully.');
+        }
+        return res;
+      }).catch(err => console.error('GHL Network Error:', err));
 
-      return Promise.allSettled([gscriptPromise, ghlPromise]);
+      return Promise.all([gscriptPromise, ghlPromise]);
     }
 
     document.getElementById('tier1Form').addEventListener('submit', async function(e) {
